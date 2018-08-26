@@ -26,12 +26,8 @@ public class BloggerController {
     private IBloggerService bloggerService;
 
 
-
-
     @RequestMapping("/getBlogName")
     public String getBloggerName() throws Exception {
-        if(true)
-            throw new RuntimeException();
         String blogName = bloggerService.getBloggerName();
         return blogName;
     }
@@ -62,12 +58,7 @@ public class BloggerController {
         return rowNumber;
     }
 
-    @ExceptionHandler(RuntimeException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public ModelAndView handleResourceNotFoundException( ModelAndView modelAndView) {
-        modelAndView.setViewName("hello");
-        return modelAndView;
-    }
+
 
 
 
